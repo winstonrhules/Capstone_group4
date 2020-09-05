@@ -6,10 +6,10 @@ import SubmitButton from './SubmitButton';
 import './App.css';
 
 class App extends React.Component{
-// API CALLS
 
+  // API CALLS
   async componentDidMount(){
-    // TO CHECK IF THE USER IS LOGGED IN OR NOT
+    // TO CHECK IF THE USER IS LOGGED IN OR NOT WHEN THE COMPONENT IS MOUNTED WITH AN ERROR HANDLER AS WELL
     try {
       let res = await fetch('/isLoggedIn',{
         method: 'post',
@@ -38,7 +38,7 @@ class App extends React.Component{
       UserStore.isLoggedIn = false;
     }
   }
-  // CODES TO LOGOUT ON THE CLICK OF THE LOGOUT BUTTON
+  // API CODES TO LOGOUT ON THE CLICK OF THE LOGOUT BUTTON
 
   async doLogout(){
     try {
@@ -92,11 +92,6 @@ class App extends React.Component{
                 onClick = { () => this.doLogout()}
               />
 
-{/*               <SubmitButton
-                    text = 'Login'
-                    disabled = { this.state.buttonDisabled}
-                    onClick = { () => this.doLogin()}
-                /> */}
             </div>
           </div>
         );
