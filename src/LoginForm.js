@@ -105,7 +105,7 @@ class LoginForm extends React.Component{
                     onClick = { () => this.doLogin()}
                 />
 
-
+            
             </div>
         );
     }
