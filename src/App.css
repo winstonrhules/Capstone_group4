@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  border: 1px solid #2196F3;
+  margin: 15% 20%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 2px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255);
+  text-align: center;
+  padding: 2px 0;
+}
+
+input {
+  /* float: left; */
+  width: 85%;
+  height: 38px;
+  border: 1px solid grey;
+  border-radius: 15px;
+  margin: 2% 0%;
+}
+
+.city {
+  /* float: left; */
+  width: 85%;
+  height: 40px;
+  border-radius: 15px;
+  margin: 2% 0%;
+}
+
+button {
+  background-color:  #2196F3;
+  color: white;
+  width: 30%;
+  height: 40px;
+  border: 1px solid rgb(255, 254, 254);
+  border-radius: 18px;
+  margin: 2%;
+  font-size: 18px;
+}
+
+.register {
+  color:  #2196F3;
+  font-size: 5ch;
+}
+
+.checkbox {
+  width: 15% !important;
+  height: 15px !important;
+  float: center !important;
+  
+} 
+
+span a {
+  font-size: 12px !important;
+  color: #2196F3 !important;
+}
