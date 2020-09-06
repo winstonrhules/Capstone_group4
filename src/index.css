@@ -69,7 +69,7 @@ body, html, #root, .app, .container {
   text-align: left;
 }
 .signUP {
-  color: black;
+  color: rgb(0, 0, 0);
   padding-top: 12px;
   font-size: small;  
 }

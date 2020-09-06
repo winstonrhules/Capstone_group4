@@ -132,7 +132,6 @@ hannpdleTouchTap = () => {
                         />
                 {/* THE CODE BELLOW CREATES A HORIZONTAL LINE */}
                     {/* <View style={{ borderBottomColor: 'grey', borderBottomWidth: 1, alignSelf:'stretch' }}/> */}
-                    <section>
                         <div className= 'password'>
                             <a href ={'reset.html'}>Forgot passward?</a>
                         </div>  
@@ -141,7 +140,6 @@ hannpdleTouchTap = () => {
                             Don't have an account? 
                             <a href = {'reset.html'}> Sign Up!</a>
                         </div>
-                    </section>
                 </div>
             </div>
         );
