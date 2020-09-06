@@ -2,8 +2,6 @@ body, html, #root, .app, .container {
   width: 100%;
   height: 100%;
 }
-
-
 .container {
   font-size: 28px;
   color: rgb(0, 0, 0);
@@ -62,4 +60,11 @@ body, html, #root, .app, .container {
   padding-bottom: 60px;
   border-style: ridge;
   box-sizing: border-box;
+}
+.password {
+  font-style: small;
+  color: rgb(62, 62, 233);
+  font-size: small;
+  padding-top: 12px;
+  text-align: left;
 }

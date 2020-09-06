@@ -3,6 +3,7 @@ import React        from 'react';
 import InputField   from './InputField';
 import SubmitButton from './SubmitButton';
 import UserStore    from './stores/UserStore';
+//import { validate } from 'validate.js';
 
 
 // EMAIL VALIDATION
@@ -130,6 +131,9 @@ hannpdleTouchTap = () => {
                         />
                 {/* THE CODE BELLOW CREATES A HORIZONTAL LINE */}
                     {/* <View style={{ borderBottomColor: 'grey', borderBottomWidth: 1, alignSelf:'stretch' }}/> */}
+                    <div className= 'password'>
+                        Forgot passward?
+                    </div>
                 </div>
             </div>
         );
