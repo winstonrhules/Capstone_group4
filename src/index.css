@@ -6,57 +6,60 @@ body, html, #root, .app, .container {
 
 .container {
   font-size: 28px;
-  color: #fff;
+  color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  background-image: none;
 }
 
 .loginForm {
- box-sizing: border-box;
- width: 100%;
- max-width: 400px;
- padding-left: 20px;
- padding-right: 20px;
- padding-top: 20px;
- padding-bottom: 40px;
- background-color: rgb(108, 108, 190);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 }
 
 .inputField {
- padding-top: 16px;
+  padding-top: 16px;
 }
 
 .input {
- box-sizing: border-box;
- outline: none;
- border: solid 2px #2b2d2e;
- border-radius: 4px;
- color: white;
- width: 100%;
- padding: 12px;
- font-size: 14px;
- background: rgb(247, 244, 244);
+  box-sizing: border-box;
+  outline: none;
+  border: solid 1px grey;
+  border-radius: 4px;
+  color: black;
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
 }
-
 .submitButton {
- padding-top: 16px;
- 
+  padding-top: 16px;
 }
-
-
 .btn {
- width: 100%;
- min-width: 280px;
- color: white;
- padding: 12px;
- font-size: 14px;
- font-weight: bold;
- border: solid 2px #37393b;
- border-radius: 4px;
- background: blue;
- cursor: pointer;
+  width: 100%;
+  min-width: 100px;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  border: solid 1px rgb(100, 100, 236);
+  border-radius: 12px;
+  background: rgb(100, 100, 236);
+  cursor: pointer;
+}
+.Box {
+  border: 2px rgb(155, 126, 126);
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  border-style: ridge;
+  box-sizing: border-box;
 }

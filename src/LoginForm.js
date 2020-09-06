@@ -1,21 +1,41 @@
 import React        from 'react';
+// import {View}       from 'react-native';
 import InputField   from './InputField';
 import SubmitButton from './SubmitButton';
 import UserStore    from './stores/UserStore';
+
+
+// EMAIL VALIDATION
+const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 class LoginForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             email: '',
+            emailError: '',
             password: '',
             buttonDisabled: false
         }
     }
-// PROPERTY HERE REFERS TO THE 'Email' AND 'Password'
+// THE CODE BELLOW CHECKS FOR EMAIL VALIDATION
+hannpdleTouchTap = () => {
+    if(this.state.email === '' || this.state.email == null){
+        this.setState({
+        emailError: "Email text field cannot be empty"
+    });
+    }
+    else if (!emailPattern.test(this.state.email) && this.state.email.length > 0) {
+        this.setState({
+        emailError: "Enter a valid email"
+        });
+    }
+}   
+
+// PROPERTY HERE REFERS TO THE 'Email/USERNAME' AND 'PASSWORD'
     setInputValue(property, val) {
         val = val.trim();
-        if(val.length > 12){
+        if(val.length < 0){
             return;
         }
         this.setState({
@@ -30,7 +50,7 @@ class LoginForm extends React.Component{
             buttonDisabled: false
         })
     }
-    // API CALL
+    // API CALL FOR THE LOGIN BUTTON
     async doLogin() {
         if (!this.state.email){
             return;
@@ -77,35 +97,40 @@ class LoginForm extends React.Component{
         }
     }
     render(){
+
+        
     // USER INTERFACE FOR THE LOGIN FORM
         return(
-            <div className="loginForm">
-    
-                Sign into your account
-            {/* THE INPUT FIELD FOR EMAIL ADDRESS */}
-                <InputField
-                    type = 'text'
-                    placeholder = 'Email'
-                    value = { this.state.email ? this.state.email: ''}
-                    onChange = { (val) => this.setInputValue('email', val)}
-               />
-               
-            {/* THE INPUT FIELD FOR PASSWORD */}
-    
-                <InputField
-                    type = 'password'
-                    placeholder = 'Password'
-                    value = { this.state.password ? this.state.password: ''}
-                    onChange = { (val) => this.setInputValue('password', val)}
-                />
-            {/* THE LOG IN BUTTON */}
-                <SubmitButton
-                    text = 'Login'
-                    disabled = { this.state.buttonDisabled}
-                    onClick = { () => this.doLogin()}
-                />
+            <div className= "Box">
+                <div className="LoginForm">
+        
+                    Login to your account
+                {/* THE INPUT FIELD FOR EMAIL ADDRESS */}
+                    <InputField
+                        type = 'text'
+                        placeholder = 'Email or Username'
+                        value = { this.state.email ? this.state.email: ''}
+                        onChange = { (val) => this.setInputValue('email', val)}
 
-            
+                />
+                
+                {/* THE INPUT FIELD FOR PASSWORD */}
+        
+                    <InputField
+                        type = 'password'
+                        placeholder = 'Password'
+                        value = { this.state.password ? this.state.password: ''}
+                        onChange = { (val) => this.setInputValue('password', val)}
+                    />
+                {/* THE LOG IN BUTTON */}
+                    <SubmitButton
+                        text = 'Login'
+                        disabled = { this.state.buttonDisabled}
+                        onClick = { () => this.doLogin()}
+                        />
+                {/* THE CODE BELLOW CREATES A HORIZONTAL LINE */}
+                    {/* <View style={{ borderBottomColor: 'grey', borderBottomWidth: 1, alignSelf:'stretch' }}/> */}
+                </div>
             </div>
         );
     }
