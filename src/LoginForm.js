@@ -104,8 +104,9 @@ hannpdleTouchTap = () => {
         return(
             <div className= "Box">
                 <div className="LoginForm">
-        
-                    Login to your account
+                <div className='log'>
+                    Log into your account
+                </div>
                 {/* THE INPUT FIELD FOR EMAIL ADDRESS */}
                     <InputField
                         type = 'text'
@@ -131,9 +132,16 @@ hannpdleTouchTap = () => {
                         />
                 {/* THE CODE BELLOW CREATES A HORIZONTAL LINE */}
                     {/* <View style={{ borderBottomColor: 'grey', borderBottomWidth: 1, alignSelf:'stretch' }}/> */}
-                    <div className= 'password'>
-                        Forgot passward?
-                    </div>
+                    <section>
+                        <div className= 'password'>
+                            <a href ={'reset.html'}>Forgot passward?</a>
+                        </div>  
+                        <p></p>
+                        <div className= 'signUp'>
+                            Don't have an account? 
+                            <a href = {'reset.html'}> Sign Up!</a>
+                        </div>
+                    </section>
                 </div>
             </div>
         );
