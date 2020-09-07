@@ -39,6 +39,7 @@ export default class Signup extends Component {
     }
     render() {
         return (
+            // Registration form 
             <div className="container"> 
                     <p className="register">Registration</p>
                         <form className="grid-container">
@@ -60,15 +61,6 @@ export default class Signup extends Component {
                                 value={this.state.phone}
                                 onChange={this.onChange} 
                                 placeholder="Phone Number *"/>
-                                {/* <br/>
-                                <select className="city">
-                                    <option>City</option>
-                                    <option>Accra</option>
-                                    <option>Kumasi</option>
-                                    <option>Tamale</option>
-                                    <option>Takoradi</option>
-                                </select>
-                                <br/> */}
                                 <input className="checkbox" name="agreebox"
                                 type="checkbox" value="Agree"/><span>I agree with the 
                                 <a href="/">Terms & Conditions</a></span>

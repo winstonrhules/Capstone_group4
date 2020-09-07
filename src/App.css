@@ -62,14 +62,6 @@ input {
   margin: 2% 0%;
 }
 
-.city {
-  /* float: left; */
-  width: 85%;
-  height: 40px;
-  border-radius: 15px;
-  margin: 2% 0%;
-}
-
 button {
   background-color:  #2196F3;
   color: white;
