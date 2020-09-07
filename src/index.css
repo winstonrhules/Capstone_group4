@@ -76,7 +76,11 @@ body, html, #root, .app, .container {
   box-sizing: border-box;
 }
 .sign{
-  color: rgb(0, 0, 0);
+  color: rgb(83, 81, 81);
   padding-top: 20px;
-  font-size: 16px ;  
+  font-size: 16px ; 
+  font-feature-settings: "kern" 1;
+  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern";
+  -moz-font-feature-settings: "kern=1";
 }
