@@ -2,9 +2,6 @@ import React        from 'react';
 import InputField   from './InputField';
 import SubmitButton from './SubmitButton';
 import UserStore    from './stores/UserStore';
-//import { Field, reduxForm } from 'redux-form';
-//import { validate } from 'validate.js';
-
 
 // EMAIL VALIDATION
 const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -127,7 +124,7 @@ hannpdleTouchTap = () => {
                     <SubmitButton
                         text = 'Sign in to your account'
                         disabled = { this.state.buttonDisabled}
-                        onClick = { () => this.doLogin()}
+                        onClick = { () => this.hannpdleTouchTap()}
                         />
 
                             {/* <center><p id='emailError'>HELLO</p></center> */}
