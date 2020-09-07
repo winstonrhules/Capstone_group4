@@ -1,8 +1,8 @@
 import React        from 'react';
-// import {View}       from 'react-native';
 import InputField   from './InputField';
 import SubmitButton from './SubmitButton';
 import UserStore    from './stores/UserStore';
+//import { Field, reduxForm } from 'redux-form';
 //import { validate } from 'validate.js';
 
 
@@ -24,6 +24,7 @@ hannpdleTouchTap = () => {
     if(this.state.email === '' || this.state.email == null){
         this.setState({
         emailError: "Email text field cannot be empty"
+        //document.getElementByid('emailError').innerHTML ="Email text field cannot be empty";
     });
     }
     else if (!emailPattern.test(this.state.email) && this.state.email.length > 0) {
@@ -31,7 +32,7 @@ hannpdleTouchTap = () => {
         emailError: "Enter a valid email"
         });
     }
-}   
+} 
 
 // PROPERTY HERE REFERS TO THE 'Email/USERNAME' AND 'PASSWORD'
     setInputValue(property, val) {
@@ -102,20 +103,18 @@ hannpdleTouchTap = () => {
         
     // USER INTERFACE FOR THE LOGIN FORM
         return(
-            <div className= "Box">
+            
                 <div className="LoginForm">
-                <div className='log'>
-                    Log into your account
-                </div>
+                <div className='log'> Sign in to your account </div >
+
                 {/* THE INPUT FIELD FOR EMAIL ADDRESS */}
                     <InputField
                         type = 'text'
-                        placeholder = 'Email or Username'
+                        placeholder = 'Email'
                         value = { this.state.email ? this.state.email: ''}
                         onChange = { (val) => this.setInputValue('email', val)}
 
                 />
-                
                 {/* THE INPUT FIELD FOR PASSWORD */}
         
                     <InputField
@@ -126,22 +125,22 @@ hannpdleTouchTap = () => {
                     />
                 {/* THE LOG IN BUTTON */}
                     <SubmitButton
-                        text = 'Login'
+                        text = 'Sign in to your account'
                         disabled = { this.state.buttonDisabled}
                         onClick = { () => this.doLogin()}
                         />
+
+                            {/* <center><p id='emailError'>HELLO</p></center> */}
+  
                 {/* THE CODE BELLOW CREATES A HORIZONTAL LINE */}
-                    {/* <View style={{ borderBottomColor: 'grey', borderBottomWidth: 1, alignSelf:'stretch' }}/> */}
-                        <div className= 'password'>
-                            <a href ={'reset.html'}>Forgot passward?</a>
-                        </div>  
-                        <p></p>
-                        <div className= 'signUp'>
+                    <hr></hr>
+                        
+                        <div className= 'sign'>
                             Don't have an account? 
                             <a href = {'reset.html'}> Sign Up!</a>
                         </div>
                 </div>
-            </div>
+           
         );
     }
 }
