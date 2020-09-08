@@ -4,24 +4,23 @@ import SubmitButton from './SubmitButton';
 import UserStore    from './stores/UserStore';
 
 // EMAIL VALIDATION
-const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 class LoginForm extends React.Component{
     constructor(props){
         super(props);
         this.state = {
             email: '',
-            emailError: '',
             password: '',
             buttonDisabled: false
         }
     }
 // THE CODE BELLOW CHECKS FOR EMAIL VALIDATION
-hannpdleTouchTap = () => {
+/* hannpdleTouchTap = () => {
     if(this.state.email === '' || this.state.email == null){
         this.setState({
         emailError: "Email text field cannot be empty"
-        //document.getElementByid('emailError').innerHTML ="Email text field cannot be empty";
+       
     });
     }
     else if (!emailPattern.test(this.state.email) && this.state.email.length > 0) {
@@ -29,7 +28,7 @@ hannpdleTouchTap = () => {
         emailError: "Enter a valid email"
         });
     }
-} 
+} */ 
 
 // PROPERTY HERE REFERS TO THE 'Email/USERNAME' AND 'PASSWORD'
     setInputValue(property, val) {
@@ -102,11 +101,11 @@ hannpdleTouchTap = () => {
         return(
             
                 <div className="LoginForm">
-                <div className='log'> Sign in to your account </div >
+                    <div className='log'> Sign in to your account </div >
 
                 {/* THE INPUT FIELD FOR EMAIL ADDRESS */}
                     <InputField
-                        type = 'text'
+                        type = 'email'
                         placeholder = 'Email'
                         value = { this.state.email ? this.state.email: ''}
                         onChange = { (val) => this.setInputValue('email', val)}
@@ -124,11 +123,9 @@ hannpdleTouchTap = () => {
                     <SubmitButton
                         text = 'Sign in to your account'
                         disabled = { this.state.buttonDisabled}
-                        onClick = { () => this.hannpdleTouchTap()}
+                        onClick = { () => this.doLogin()}
                         />
-
-                            {/* <center><p id='emailError'>HELLO</p></center> */}
-  
+ 
                 {/* THE CODE BELLOW CREATES A HORIZONTAL LINE */}
                     <hr></hr>
                         
